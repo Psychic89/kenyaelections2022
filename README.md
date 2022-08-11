@@ -1,4 +1,4 @@
-# AWS Transactional Document Digitization
+# AWS Election Document Digitization
 
 AWS workflow for digitizing transactional documents with Amazon Textract and a human-review loop with Amazon Augmented Artificial Intelligence (A2I). Deployed using CDK.
 
@@ -7,7 +7,7 @@ AWS workflow for digitizing transactional documents with Amazon Textract and a h
 ![Architecture Diagram](/docs/architecture-tdd.png)
 ### Basic Usage Workflow:
 
-* Put a scanned tabular transactional PDF document in s3 at `s3://tdd-<git-branch>-store-resource-<account-number>-<region>/acquire/`
+* Put a scanned tabular election form PDF document in s3 at `s3://tdd-<git-branch>-store-resource-<account-number>-<region>/acquire/`
 * This action triggers the `tdd-<git-branch>-state-pipeline` step function which will: 
   * Analyze the PDF document with Textract with table extraction 
   * Convert the textract table extractions to a simplified JSON format
